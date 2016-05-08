@@ -50,7 +50,10 @@ custom_style() {
 
 # MAIN
 case "$1" in
+  no-animation) source $styles/no-animation.sh $2 ;;
   flashing) source $styles/flashing.sh $2 $3 ;;
+  dual-flashing)  source $styles/dual-flashing.sh $2 $3 ;;
+  breathing)  source $styles/breathing.sh $2 $3 ;;
   help) show_help ;;
   "") echo "Unknown argument. Try: 'nvidia-led help'" ;;
   *)  custom_style $1 $2 $3 ;;
