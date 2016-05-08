@@ -21,7 +21,7 @@ show_help() {
   echo "Usage: nvidia-led flashing <intensity> <interval>"
   echo -e "\nValues:"
   echo "  intensity     Type: Range [0-100]. E.g., 20-80, 10-50, 0-100"
-  echo "  interval      Type: Numeric [1-100]. E.g., 20, 100, 70"
+  echo "  interval      Type: Integer [1-100]. E.g., 20, 100, 70"
   exit 0
 }
 

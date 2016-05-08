@@ -7,7 +7,7 @@ set_brightness() {
 }
 
 test_value() {
-  if [ -z $3 ]; then
+  if [[ ! $3 =~ ^-?[0-9]+$ ]]; then
     return 1
   fi
   [[ $3 -ge $1 && $3 -le $2 ]]
@@ -35,8 +35,8 @@ show_help() {
   done
   echo "  help                                  Print this help"
   echo -e "\nValues:"
-  echo "  intensity     Light intensity of animation. Type: Numeric/Range [0-100]. E.g., 80, 10-50, 0-100"
-  echo "  interval      Interval time of animation. Type: Numeric [1-100]. E.g., 20, 100, 70"
+  echo "  intensity     Light intensity of animation. Type: Integer/Range [0-100]. E.g., 80, 10-50, 0-100"
+  echo "  interval      Interval time of animation. Type: Integer [1-100]. E.g., 20, 100, 70"
   exit 0
 }
 
