@@ -1,6 +1,6 @@
 #! /bin/bash
 
-styles="~/.config/nvidia-led/styles"
+styles="/home/*/.config/nvidia-led/styles"
 
 set_brightness() {
   nvidia-settings -a GPULogoBrightness=$1 > /dev/null 2>&1
@@ -52,5 +52,6 @@ custom_style() {
 case "$1" in
   flashing) source $styles/flashing.sh $2 $3 ;;
   help) show_help ;;
+  "") echo "Unknown argument. Try: 'nvidia-led help'" ;;
   *)  custom_style $1 $2 $3 ;;
 esac
