@@ -27,22 +27,21 @@ test_range() {
 }
 
 show_help() {
-  echo "nvidia-led: Awesome animations for NVIDIA GeForce GTX leds"
+  echo "nvidia-led: Awesome effects for NVIDIA GeForce GTX leds"
   echo "Usage: nvidia-led [options] [values]"
   echo -e "\nOptions:"
   for animation in $(ls $styles); do
     echo "  $(source $styles/$animation info)"
   done
-  echo "  help                                  Print this help"
   echo -e "\nValues:"
-  echo "  intensity     Light intensity of animation. Type: Integer/Range [0-100]. E.g., 80, 10-50, 0-100"
-  echo "  interval      Interval time of animation. Type: Integer [1-100]. E.g., 20, 100, 70"
+  echo "  intensity     Light intensity of effect. Type: Integer/Range [0-100]. E.g., 80, 10-50, 0-100"
+  echo "  interval      Interval time of effect. Type: Integer [1-100]. E.g., 20, 100, 70"
   exit 0
 }
 
 custom_style() {
   if [[ $(ls $styles | grep $1.sh) ]]; then
-    source $styles/$1.sh $2 $3
+    source $styles/$1.sh $2 $3 $4
   else
     echo "Unknown argument. Try: 'nvidia-led help'"
   fi
@@ -53,8 +52,8 @@ case "$1" in
   no-animation) source $styles/no-animation.sh $2 ;;
   flashing) source $styles/flashing.sh $2 $3 ;;
   dual-flashing)  source $styles/dual-flashing.sh $2 $3 ;;
-  breathing)  source $styles/breathing.sh $2 $3 ;;
+  breathing)  source $styles/breathing.sh $2 $3 $4  ;;
   help) show_help ;;
   "") echo "Unknown argument. Try: 'nvidia-led help'" ;;
-  *)  custom_style $1 $2 $3 ;;
+  *)  custom_style $1 $2 $3 $4  ;;
 esac

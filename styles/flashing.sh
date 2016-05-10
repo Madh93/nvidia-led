@@ -14,7 +14,7 @@ animation() {
 }
 
 show_info() {
-  echo "flashing <intensity> <interval>       Flashing animation"
+  echo "flashing <intensity> <interval>               Flashing effect"
 }
 
 show_help() {

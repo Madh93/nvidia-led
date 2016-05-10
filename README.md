@@ -27,14 +27,14 @@ Clone or download repository and install it traditionally:
 #####Examples:
 
     $ nvidia-led no-animation 80
-    $ nvidia-led breathing 40-100 20
+    $ nvidia-led breathing 40-100 25 50
     
 #####Effects
 
-    no-animation <intensity>                Fixed brightness
-    flashing <intensity> <interval>         Flashing effect
-    dual-flashing <intensity> <interval>    Double flashing effecte
-    breathing <intensity> <interval>        Breathing effect
+    no-animation <intensity>                      Fixed brightness
+    flashing <intensity> <interval>               Flashing effect
+    dual-flashing <intensity> <interval>          Double flashing effecte
+    breathing <intensity> <interval> <interval>   Breathing effect
     
 Do you need more effects? Add your custom effects in `~/.config/nvidia-led/styles`
 

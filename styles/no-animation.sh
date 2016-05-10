@@ -7,7 +7,7 @@ animation() {
 }
 
 show_info() {
-  echo "no-animation <intensity>              Fixed brightness"
+  echo "no-animation <intensity>                      Fixed brightness"
 }
 
 show_help() {

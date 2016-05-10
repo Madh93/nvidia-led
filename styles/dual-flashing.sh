@@ -18,7 +18,7 @@ animation() {
 }
 
 show_info() {
-  echo "dual-flashing <intensity> <interval>  Double flashing animation"
+  echo "dual-flashing <intensity> <interval>          Double flashing effect"
 }
 
 show_help() {
