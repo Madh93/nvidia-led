@@ -1,5 +1,6 @@
 #! /bin/bash
 
+app_version="0.1.0"
 styles="/home/*/.config/nvidia-led/styles"
 
 set_brightness() {
@@ -33,9 +34,16 @@ show_help() {
   for animation in $(ls $styles); do
     echo "  $(source $styles/$animation info)"
   done
+  echo "  help          Print this help"
+  echo "  version       Show version"
   echo -e "\nValues:"
   echo "  intensity     Light intensity of effect. Type: Integer/Range [0-100]. E.g., 80, 10-50, 0-100"
   echo "  interval      Interval time of effect. Type: Integer [1-100]. E.g., 20, 100, 70"
+  exit 0
+}
+
+show_version() {
+  echo "nvidia-led $app_version"
   exit 0
 }
 
@@ -48,12 +56,23 @@ custom_style() {
 }
 
 # MAIN
+if [ ! -f "/usr/bin/nvidia-settings" ]; then
+  echo "'nvidia-settings' is not found. Need it to work. Exiting..."
+  exit 0
+fi
+
+if [[ $(nvidia-settings -q NvidiaDriverVersion | grep Attribute | tail -c 7) < 331.38 ]]; then
+  echo "'nvidia-settings' is not found. Need it to work. Exiting..."
+  exit 0
+fi
+
 case "$1" in
   no-animation) source $styles/no-animation.sh $2 ;;
   flashing) source $styles/flashing.sh $2 $3 ;;
   dual-flashing)  source $styles/dual-flashing.sh $2 $3 ;;
   breathing)  source $styles/breathing.sh $2 $3 $4  ;;
   help) show_help ;;
+  version) show_version ;;
   "") echo "Unknown argument. Try: 'nvidia-led help'" ;;
   *)  custom_style $1 $2 $3 $4  ;;
 esac
