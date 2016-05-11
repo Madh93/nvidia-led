@@ -1,0 +1,31 @@
+#! /bin/bash
+
+animation() {
+  # Test passed arguments...
+  # test_range 0 100 $1 || show_help
+  # ...
+  # test_value 1 100 $2 || show_help
+
+  # Animation algorithm
+  while true; do
+    set_brightness $1
+    sleep $2
+  done
+}
+
+show_info() {
+  echo "YOUR-EFFECT <VALUES>               DESCRIPTION"
+}
+
+show_help() {
+  echo "Usage: nvidia-led YOUR-EFFECT <VALUES>"
+  echo -e "\nValues:"
+  echo "  TYPE     DESCRIPTION"
+  exit 0
+}
+
+case "$1" in 
+  help) show_help ;;
+  info) show_info ;;
+  *)  animation $@  ;;
+esac
