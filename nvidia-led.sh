@@ -1,7 +1,7 @@
 #! /bin/bash
 
-app_version="0.1.0"
-styles="/home/*/.config/nvidia-led/styles"
+app_version="1.0.0"
+styles="/home/$USER/.config/nvidia-led/styles"
 
 set_brightness() {
   nvidia-settings -a GPULogoBrightness=$1 > /dev/null 2>&1
