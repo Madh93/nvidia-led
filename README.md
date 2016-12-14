@@ -37,7 +37,7 @@ Clone or download repository and install it traditionally:
 
     no-animation <intensity>                      Fixed brightness
     flashing <intensity> <interval>               Flashing effect
-    dual-flashing <intensity> <interval>          Double flashing effecte
+    dual-flashing <intensity> <interval>          Double flashing effect
     breathing <intensity> <interval> <interval>   Breathing effect
 
 Do you need more effects? Add your custom effects in `~/.config/nvidia-led/styles`
