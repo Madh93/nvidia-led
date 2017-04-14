@@ -11,6 +11,8 @@ Nvidia-led is equivalent to [GeForce Experience LED Visualizer](http://www.gefor
 * Nvidia drivers >= [331.38](http://www.nvidia.com/download/driverResults.aspx/72250/en-us)
 *  A Nvidia Geforce GTX GPU with LED logo (obvious!)
 
+Check out the [compatibility list](https://github.com/Madh93/nvidia-led/blob/master/compatibility-list.md).
+
 ### Installation
 
 ##### Arch Linux and derivatives
